@@ -8,7 +8,7 @@ export default function BlogList() {
 
   return (
     <div>
-      <div className="flex justify-center gap-6 my-10">
+      <div className="flex flex-wrap justify-center gap-6 my-10">
         <button
           onClick={() => setMenu("All")}
           className={
@@ -50,7 +50,7 @@ export default function BlogList() {
           LifeStyle
         </button>
       </div>
-      <div className="grid grid-cols-2 px-5 lg:grid-cols-4 sm:grid-cols-3  justify-around gap-10">
+      <div className="mb-10 grid grid-cols-1 md:grid-cols-3 px-5 lg:grid-cols-4 sm:grid-cols-2  justify-around gap-10">
         {blog_data
           .filter((item) => (menu === "All" ? true : item.category === menu))
           .map((item, index) => {

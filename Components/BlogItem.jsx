@@ -9,9 +9,9 @@ export default function BlogItem({image,category,title,description}) {
       <Image
         src={image}
         alt=""
-        width={400}
+        width={500}
         height={400}
-        className="border-b "
+        className="border-b mx-auto"
       />
       <p className="ml-5 mt-5 px-1 inline-block bg-black text-white text-sm">
         {category}
