@@ -1,17 +1,16 @@
 import Image from "next/image";
 import React from "react";
 import { assets } from "../Assets/assets";
+import { PiGitlabLogoSimpleBold } from "react-icons/pi";
 
 export default function Header() {
   return (
     <div className="px-5 py-5 lg:px-12 lg:py-12">
       <div className="flex justify-between items-center">
-        <Image
-          src={assets.logo}
-          width={180}
-          alt="logo"
-          className="w-[130px] sm:w-[200px] "
-        />
+        <div className=" inline-flex items-center gap-1 text-2xl sm:text-5xl">
+          <PiGitlabLogoSimpleBold />
+          <h1 className="font-bold">TalkBoard</h1>
+        </div>
         <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border  border-solid border-black shadow-[-7px_7px_0px_#000000] hover:shadow-[0px_10px_10px_#000000] hover:rounded-2xl transform transition duration-300 hover:scale-110">
           Get Started <Image src={assets.arrow} alt="arrow"></Image>
         </button>

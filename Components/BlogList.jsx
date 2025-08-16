@@ -1,36 +1,69 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { blog_data } from "../Assets/assets";
 import BlogItem from "./BlogItem";
 
 export default function BlogList() {
+  const [menu, setMenu] = useState("All");
+
   return (
     <div>
       <div className="flex justify-center gap-6 my-10">
-        <button className="bg-black text-white py-1 px-4 rounded-sm">
+        <button
+          onClick={() => setMenu("All")}
+          className={
+            menu === "All"
+              ? "bg-black text-white py-1 px-4 rounded-sm"
+              : "py-1 px-4"
+          }
+        >
           All
         </button>
-        <button className="bg-black text-white py-1 px-4 rounded-sm">
+        <button
+          onClick={() => setMenu("Technology")}
+          className={
+            menu === "Technology"
+              ? "bg-black text-white py-1 px-4 rounded-sm"
+              : "py-1 px-4"
+          }
+        >
           Technology
         </button>
-        <button className="bg-black text-white py-1 px-4 rounded-sm">
+        <button
+          onClick={() => setMenu("Startup")}
+          className={
+            menu === "Startup"
+              ? "bg-black text-white py-1 px-4 rounded-sm"
+              : "py-1 px-4"
+          }
+        >
           Startup
         </button>
-        <button className="bg-black text-white py-1 px-4 rounded-sm">
+        <button
+          onClick={() => setMenu("LifeStyle")}
+          className={
+            menu === "LifeStyle"
+              ? "bg-black text-white py-1 px-4 rounded-sm"
+              : "py-1 px-4"
+          }
+        >
           LifeStyle
         </button>
       </div>
       <div className="grid grid-cols-2 px-5 lg:grid-cols-4 sm:grid-cols-3  justify-around gap-10">
-        {blog_data.map( (item,index) => {
-          return (
-            <BlogItem
-              key={index}
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              category={item.category}
-            />
-          );
-        })}
+        {blog_data
+          .filter((item) => (menu === "All" ? true : item.category === menu))
+          .map((item, index) => {
+            return (
+              <BlogItem
+                key={index}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                category={item.category}
+              />
+            );
+          })}
       </div>
     </div>
   );
