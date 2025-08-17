@@ -8,7 +8,6 @@ const { NextResponse } = require("next/server");
 const LoadDB = async () => {
   await ConnectDB();
 };
-
 LoadDB();
 
 export async function GET(req) {
