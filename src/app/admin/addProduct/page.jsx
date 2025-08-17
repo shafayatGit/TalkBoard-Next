@@ -35,6 +35,14 @@ export default function AddProductPage() {
     const response = await axios.post("/api/blog", formData);
     if (response.data.success) {
       toast.success("Product Added");
+      setImage(false);
+      setData({
+        title: "",
+        description: "",
+        category: "Startup",
+        author: "Shafayat Hossain",
+        author_img: "/profile_icon.png",
+      });
       return;
     }
     toast.error("Something Error");
@@ -95,7 +103,10 @@ export default function AddProductPage() {
           <option value="Lifestyle">Lifestyle</option>
         </select>{" "}
         <br />
-        <button type="submit" className="cursor-pointer mt-8 w-40 h-12 bg-black text-white">
+        <button
+          type="submit"
+          className="cursor-pointer mt-8 w-40 h-12 bg-black text-white"
+        >
           ADD
         </button>
       </form>

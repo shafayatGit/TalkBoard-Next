@@ -11,7 +11,17 @@ const LoadDB = async () => {
 LoadDB();
 
 export async function GET(req) {
-  return NextResponse.json({ msg: "Api ok" });
+    const blogId = req.nextUrl.searchParams.get("id");
+    if (blogId) {
+        const blog = await BlogModel.findById(blogId);
+        return NextResponse.json(blog)
+    }
+    else{
+        // return NextResponse.json({success: false, message:"You have to give verified ID"})
+        const blogs = await BlogModel.find({});
+      
+        return NextResponse.json({ blogs });
+    }
 }
 
 export async function POST(req) {
@@ -26,7 +36,7 @@ export async function POST(req) {
   await writeFile(path, buffer);
 
   const imgURL = `/${timeStamp}_${image.name}`;
-    console.log("Image URL", imgURL);
+  console.log("Image URL", imgURL);
 
   //   Creating data that will come from the body of the form
   const blogData = {
@@ -41,5 +51,5 @@ export async function POST(req) {
   // then pass the blogData to BlogModel and for posting we have to use create
   await BlogModel.create(blogData);
   console.log("Blog Saved In Database");
-  return NextResponse.json({success: true, message: "Data Posted"});
+  return NextResponse.json({ success: true, message: "Data Posted" });
 }

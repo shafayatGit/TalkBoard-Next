@@ -1,10 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { blog_data } from "../Assets/assets";
 import BlogItem from "./BlogItem";
+import axios from "axios";
 
 export default function BlogList() {
   const [menu, setMenu] = useState("All");
+  const [blogs, setBlogs] = useState([]);
+
+  const fetchBlogs = async () => {
+    const response = await axios.get("/api/blog");
+    setBlogs(response.data.blogs);
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   return (
     <div>
@@ -51,13 +62,13 @@ export default function BlogList() {
         </button>
       </div>
       <div className="mb-10 grid grid-cols-1 md:grid-cols-3 px-5 lg:grid-cols-4 sm:grid-cols-2  justify-around gap-10">
-        {blog_data
-          .filter((item) => (menu === "All" ? true : item.category === menu))
+        {blogs
+          ?.filter((item) => (menu === "All" ? true : item.category === menu))
           .map((item, index) => {
             return (
               <BlogItem
                 key={index}
-                id={item.id}
+                id={item._id}
                 image={item.image}
                 title={item.title}
                 description={item.description}

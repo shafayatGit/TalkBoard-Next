@@ -5,19 +5,20 @@ import Image from "next/image";
 import { PiGitlabLogoSimpleBold } from "react-icons/pi";
 import Footer from "../../../../Components/Footer";
 import Link from "next/link";
+import axios from "axios";
 
 export default function page({ params }) {
   const [data, setData] = useState(null);
   const p = params;
 
-  const fetchBlogData = () => {
-    for (let i = 0; i < blog_data.length; i++) {
-      if (Number(p.id) === blog_data[i].id) {
-        setData(blog_data[i]);
-        console.log(blog_data[i]);
-        break;
-      }
-    }
+  const fetchBlogData = async () => {
+    const blog = await axios.get(`/api/blog`,{
+        params:{
+            id:params.id
+        }
+    });
+    // const singleBlog = blogs.filter((b) => b._id === p.id);
+    setData(blog.data);
   };
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function page({ params }) {
             height={60}
             className="mx-auto mt-6 border border-black rounded-full"
           />
-          <h1 className="mt-1 pb-2 text-lg max-w-3xl mx-auto">{data.author}</h1>
+          <h1 className="mt-1 pb-2 text-lg max-w-3xl mx-auto">Author: {data.author}</h1>
         </div>
 
         <div className="mx-5 max-w-4xl md:mx-auto mt-[-100px] mb-10">

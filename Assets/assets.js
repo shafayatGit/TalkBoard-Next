@@ -43,7 +43,7 @@ export const assets = {
     export const blog_data = [{
         id:1,
         title:"A detailed step by step guide to manage your lifestyle",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_1,
         date:Date.now(),
         category:"Lifestyle",
@@ -53,7 +53,7 @@ export const assets = {
     {
         id:2,
         title:"How to create an effective startup roadmap or ideas",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_2,
         date:Date.now(),
         category:"Startup",
@@ -63,7 +63,7 @@ export const assets = {
     {
         id:3,
         title:"Learning new technology to boost your career in software",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_3,
         date:Date.now(),
         category:"Technology",
@@ -73,7 +73,7 @@ export const assets = {
     {
         id:4,
         title:"Tips for getting the most out of apps and software",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_4,
         date:Date.now(),
         category:"Technology",
@@ -83,7 +83,7 @@ export const assets = {
     {
         id:5,
         title:"Enhancing your skills and capturing memorable moments",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_5,
         date:Date.now(),
         category:"Lifestyle",
@@ -93,7 +93,7 @@ export const assets = {
     {
         id:6,
         title:"Maximizing returns by minimizing resources in your startup",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_6,
         date:Date.now(),
         category:"Startup",
@@ -103,7 +103,7 @@ export const assets = {
     {
         id:7,
         title:"Technology for Career advancement in development",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_7,
         date:Date.now(),
         category:"Technology",
@@ -113,7 +113,7 @@ export const assets = {
     {
         id:8,
         title:"A comprehensive roadmap for effective lifestyle management",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_8,
         date:Date.now(),
         category:"Lifestyle",
@@ -123,7 +123,7 @@ export const assets = {
     {
         id:9,
         title:"Achieving maximum returns with minimal resources",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_9,
         date:Date.now(),
         category:"Startup",
@@ -133,7 +133,7 @@ export const assets = {
     {
         id:10,
         title:"Beyond the Ordinary: Crafting Your Exceptional Lifestyle",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_10,
         date:Date.now(),
         category:"Lifestyle",
@@ -143,7 +143,7 @@ export const assets = {
     {
         id:11,
         title:"Unveiling the Secrets of Successful Startups in Technolgy",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_11,
         date:Date.now(),
         category:"Startup",
@@ -153,7 +153,7 @@ export const assets = {
     {
         id:12,
         title:"How to design an online Learning Platform today",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_12,
         date:Date.now(),
         category:"Technology",
@@ -163,7 +163,7 @@ export const assets = {
     {
         id:13,
         title:"Tomorrow's Algorithms: Shaping the Landscape of Future AI",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_13,
         date:Date.now(),
         category:"Startup",
@@ -173,7 +173,7 @@ export const assets = {
     {
         id:14,
         title:"Balance & Bliss: Navigating Life's Journey with Style",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_14,
         date:Date.now(),
         category:"Lifestyle",
@@ -183,7 +183,7 @@ export const assets = {
     {
         id:15,
         title:"Exploring the Evolution of social networking in the Future",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_15,
         date:Date.now(),
         category:"Technology",
@@ -193,7 +193,7 @@ export const assets = {
     {
         id:16,
         title:"Shaping the Future of statup ecosystem in the world",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
+        description:"This is the description of the blog",
         image:blog_pic_16,
         date:Date.now(),
         category:"Startup",
