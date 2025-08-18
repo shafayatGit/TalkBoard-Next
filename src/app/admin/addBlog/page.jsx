@@ -12,14 +12,15 @@ export default function AddProductPage() {
     description: "",
     category: "Startup",
     author: "Shafayat Hossain",
-    author_img: "/profile_icon.png",
+    author_img:
+      "https://res.cloudinary.com/dp44jbhsq/image/upload/v1755498076/644E5CAC-AB3E-4988-B303-804ECD0B92EB_h75boo.jpg",
   });
 
   const onChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setData((data) => ({ ...data, [name]: value }));
-    console.log(data);
+    // console.log(data);
   };
 
   const onSubmitHandler = async (e) => {
@@ -34,14 +35,15 @@ export default function AddProductPage() {
 
     const response = await axios.post("/api/blog", formData);
     if (response.data.success) {
-      toast.success("Product Added");
+      toast.success(response.data.message);
       setImage(false);
       setData({
         title: "",
         description: "",
         category: "Startup",
         author: "Shafayat Hossain",
-        author_img: "/profile_icon.png",
+        author_img:
+          "https://res.cloudinary.com/dp44jbhsq/image/upload/v1755498076/644E5CAC-AB3E-4988-B303-804ECD0B92EB_h75boo.jpg",
       });
       return;
     }

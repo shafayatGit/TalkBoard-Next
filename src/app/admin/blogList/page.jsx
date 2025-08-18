@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import BlogTableItem from "../../../../Components/AdminComponents/BlogTableItem";
 import axios from "axios";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 export default function BlogListPage() {
   const [blogs, setBlogs] = useState([]);
@@ -9,6 +11,31 @@ export default function BlogListPage() {
   const fetchBlogs = async () => {
     const res = await axios.get("/api/blog");
     setBlogs(res.data.blogs);
+  };
+
+  const handleDelete = async (mongoId) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const res = await axios.delete(`/api/blog`, {
+          params: {
+            id: mongoId,
+          },
+        });
+        Swal.fire({
+          text: res.data.message,
+          icon: "success",
+        });
+        fetchBlogs()
+      }
+    });
   };
 
   useEffect(() => {
@@ -41,6 +68,9 @@ export default function BlogListPage() {
               return (
                 <BlogTableItem
                   key={index}
+                  handleDelete={handleDelete}
+                  date={item.date}
+                  mongoId={item._id}
                   author_img={item.author_img}
                   title={item.title}
                   author={item.author}

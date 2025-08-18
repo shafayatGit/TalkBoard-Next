@@ -12,11 +12,7 @@ export default function page({ params }) {
   const p = params;
 
   const fetchBlogData = async () => {
-    const blog = await axios.get(`/api/blog`,{
-        params:{
-            id:params.id
-        }
-    });
+    const blog = await axios.get(`/api/blog?id=${p.id}`);
     // const singleBlog = blogs.filter((b) => b._id === p.id);
     setData(blog.data);
   };
@@ -28,17 +24,20 @@ export default function page({ params }) {
   return data ? (
     <>
       <div className="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
-        <Link href={"/"}>
-          <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center">
+          <Link href={"/"}>
             <div className="text-black inline-flex items-center gap-1 text-xl sm:text-3xl">
               <PiGitlabLogoSimpleBold />
               <h1 className="font-bold">TalkBoard</h1>
             </div>
-            <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border  border-solid border-black shadow-[-7px_7px_0px_#000000] hover:shadow-[0px_10px_10px_#000000] hover:rounded-2xl transform transition duration-300 hover:scale-110">
+          </Link>
+          <Link href={"/admin/addBlog"}>
+            <button className="flex cursor-pointer items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border  border-solid border-black shadow-[-7px_7px_0px_#000000] hover:shadow-[0px_10px_10px_#000000] hover:rounded-2xl transform transition duration-300 hover:scale-110">
               Get Started <Image src={assets.arrow} alt="arrow"></Image>
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <div className="text-center my-24 ">
           <h1 className="text-2xl sm:text-5xl font-semibold max-w-3xl mx-auto">
             {data.title}
@@ -50,7 +49,9 @@ export default function page({ params }) {
             height={60}
             className="mx-auto mt-6 border border-black rounded-full"
           />
-          <h1 className="mt-1 pb-2 text-lg max-w-3xl mx-auto">Author: {data.author}</h1>
+          <h1 className="mt-1 pb-2 text-lg max-w-3xl mx-auto">
+            Author: {data.author}
+          </h1>
         </div>
 
         <div className="mx-5 max-w-4xl md:mx-auto mt-[-100px] mb-10">
