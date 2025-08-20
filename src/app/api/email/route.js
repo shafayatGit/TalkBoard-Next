@@ -30,5 +30,5 @@ export async function DELETE(req) {
   const email = await EmailModel.findById(id);
 
   await EmailModel.findByIdAndDelete(email);
-  return NextResponse.json({ success: true, message: "Blog Deleted" });
+  return NextResponse.json({ success: true, message: "Email Deleted" });
 }
